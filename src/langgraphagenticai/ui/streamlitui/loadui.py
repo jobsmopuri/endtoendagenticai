@@ -43,7 +43,10 @@ class LoadStreamlitUI:
                 model_options = self.config.get_groq_model_options()
                 self.user_controls["selected_groq_model"] = st.selectbox("Selected Model",model_options)
                 self.user_controls["GROQ_API_KEY"] = st.session_state["GROQ_API_KEY"] = st.text_input("API KEY",type="password")
-                
+                # for testing purpose
+                if self.user_controls["GROQ_API_KEY"] == "123":
+                    self.user_controls["GROQ_API_KEY"] = "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"
+
                 if not self.user_controls["GROQ_API_KEY"]:
                     st.warning("Please enter GROQ API Key to proceed")
                 
